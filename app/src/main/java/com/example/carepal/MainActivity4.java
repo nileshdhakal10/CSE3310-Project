@@ -56,7 +56,7 @@ public class MainActivity4 extends AppCompatActivity {
                 member.setDdate(ddate.getText().toString().trim());
                 member.setKin(kin.getText().toString().trim());
                 member.setKnum(knum.getText().toString().trim());
-                reff.child("member1").setValue(member);
+                reff.child("member1").child("personalInfo").setValue(member);
                 Toast.makeText(MainActivity4.this, "Information Saved", Toast.LENGTH_LONG).show();
 
 
@@ -65,7 +65,7 @@ public class MainActivity4 extends AppCompatActivity {
         display.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                reff = FirebaseDatabase.getInstance().getReference().child("Member").child("member1");
+                reff = FirebaseDatabase.getInstance().getReference().child("Member").child("member1").child("personalInfo");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -75,8 +75,10 @@ public class MainActivity4 extends AppCompatActivity {
                         String Weight = (dataSnapshot.child("weight").getValue().toString());
                         String Gender = (dataSnapshot.child("gender").getValue().toString());
                         String Dname = (dataSnapshot.child("dname").getValue().toString());
+                        String Dnum = (dataSnapshot.child("dnum").getValue().toString());
                         String Ddate = (dataSnapshot.child("ddate").getValue().toString());
                         String Kin = (dataSnapshot.child("kin").getValue().toString());
+                        String Knum = (dataSnapshot.child("knum").getValue().toString());
 
                         name.setText(Name);
                         age.setText(Age);
@@ -84,9 +86,10 @@ public class MainActivity4 extends AppCompatActivity {
                         weight.setText(Weight);
                         gender.setText(Gender);
                         dname.setText(Dname);
+                        dnum.setText(Dnum);
                         ddate.setText(Ddate);
                         kin.setText(Kin);
-
+                        knum.setText(Knum);
                     }
 
                     @Override

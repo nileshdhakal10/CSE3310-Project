@@ -57,7 +57,7 @@ public class MainActivity6 extends AppCompatActivity {
                 member.setDdate(ddate.getText().toString().trim());
                 member.setKin(kin.getText().toString().trim());
                 member.setKnum(knum.getText().toString().trim());
-                reff.child("member1").setValue(member);
+                reff.child(name.getText().toString().trim()).child("personalInfo").setValue(member);
                 Toast.makeText(MainActivity6.this, "Information Updated", Toast.LENGTH_LONG).show();
                 Intent backTomenu = new Intent(MainActivity6.this, MainActivity4.class);
                 startActivity(backTomenu);
