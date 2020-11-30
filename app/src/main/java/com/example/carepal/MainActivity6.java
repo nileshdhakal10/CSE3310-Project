@@ -61,8 +61,6 @@ public class MainActivity6 extends AppCompatActivity {
                 Toast.makeText(MainActivity6.this, "Information Updated", Toast.LENGTH_LONG).show();
                 Intent backTomenu = new Intent(MainActivity6.this, MainActivity4.class);
                 startActivity(backTomenu);
-
-
             }
         });
 
