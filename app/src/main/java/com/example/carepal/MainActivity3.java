@@ -45,6 +45,15 @@ public class MainActivity3 extends AppCompatActivity {
             }
         });
 
+        // opens search component
+        button_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity3.this,search_main.class);
+                startActivity(intent);
+            }
+        });
+
         // opens monitoring component
         button_monitoring.setOnClickListener(new View.OnClickListener() {
             @Override

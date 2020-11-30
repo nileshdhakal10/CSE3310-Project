@@ -25,14 +25,15 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="100dp"
         android:text="@string/mednameTv"
-        android:textSize="20sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.064"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.137" />
 
     <EditText
         android:id="@+id/medname"
@@ -43,11 +44,11 @@
         android:layout_marginRight="20dp"
         android:ems="10"
         android:hint="@string/medhints"
+        android:inputType="textPersonName"
         android:textColor="#070707"
         android:textColorHint="@color/black"
-        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,29 +56,33 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:layout_marginTop="40dp"
         android:text="@string/doctorTv"
-        android:textSize="20sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/docname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/docnamehint"
+        android:inputType="textPersonName"
         android:textColor="#070707"
         android:textColorHint="@color/black"
-        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.686"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/medname" />
+        app:layout_constraintTop_toBottomOf="@+id/medname"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView3"
@@ -105,10 +110,10 @@
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.579"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/docname"
-        app:layout_constraintVertical_bias="0.021" />
+        app:layout_constraintVertical_bias="0.02" />
 
     <Button
         android:id="@+id/saveBtn"

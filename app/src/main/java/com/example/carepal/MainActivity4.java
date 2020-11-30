@@ -65,11 +65,11 @@ public class MainActivity4 extends AppCompatActivity {
         display.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                reff = FirebaseDatabase.getInstance().getReference().child("Member").child("member1").child("personalInfo");
+                reff = FirebaseDatabase.getInstance().getReference().child("Member").child(name.getText().toString().trim()).child("personalInfo");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        String Name = dataSnapshot.child("name").getValue().toString();
+                        String Name = (dataSnapshot.child("name").getValue().toString());
                         String Age = (dataSnapshot.child("age").getValue().toString());
                         String Height = (dataSnapshot.child("height").getValue().toString());
                         String Weight = (dataSnapshot.child("weight").getValue().toString());
