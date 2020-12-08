@@ -27,13 +27,14 @@ public class display_chart extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_chart);
+        arrayAdapter=new ArrayAdapter<String>(display_chart.this,android.R.layout.simple_list_item_1,myArrayList);
         mRef= FirebaseDatabase.getInstance().getReference().child("Member").child("member1").child("food");
         myListView=(ListView) findViewById(R.id.listview1);
-        arrayAdapter=new ArrayAdapter<String>(display_chart.this,android.R.layout.simple_list_item_1,myArrayList);
         myListView.setAdapter(arrayAdapter);
         mRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildname) {
+                mRef= FirebaseDatabase.getInstance().getReference().child("Member").child("member1").child("food");
                 String value=snapshot.getValue(diet_member.class).toString();
                 myArrayList.add(value);
                 arrayAdapter.notifyDataSetChanged();
@@ -41,7 +42,7 @@ public class display_chart extends AppCompatActivity {
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildname) {
-
+                arrayAdapter.notifyDataSetChanged();
             }
 
             @Override

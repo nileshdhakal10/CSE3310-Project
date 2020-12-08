@@ -1,10 +1,12 @@
 package com.example.carepal;
 
 public class diet_member {
-    String FoodName = null;
-    Float calorie = null;
+    String FoodName;
+    Float calorie;
 
     public diet_member() {
+        FoodName = null;
+        calorie = null;
     }
 
     public String getFoodName() {

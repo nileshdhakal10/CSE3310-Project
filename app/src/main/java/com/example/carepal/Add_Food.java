@@ -19,10 +19,9 @@
 
 
     public class Add_Food extends AppCompatActivity {
-
+    diet_member member;
     EditText AddFood,Calorie;
     Button done,cancel;
-    diet_member member;
     DatabaseReference reff;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +31,7 @@
             cancel=(Button) findViewById(R.id.can);
             AddFood=(EditText)findViewById(R.id.food);
             Calorie=(EditText)findViewById(R.id.calorie);
+
             member= new diet_member();
             reff= FirebaseDatabase.getInstance().getReference().child("Member").child("member1").child("food");
             done.setOnClickListener(new View.OnClickListener() {
@@ -45,7 +45,7 @@
                         Calorie.setError("Enter Calorie");
                     }
                     else{
-                        showToast();
+                    showToast();
                     Float calorie=Float.parseFloat((Calorie.getText().toString().trim()));
                     member.setFoodName(AddFood.getText().toString().trim());
                     member.setCalorie(calorie);

@@ -7,9 +7,11 @@
     import android.content.Intent;
     import android.view.View;
     import android.widget.TextView;
+    import android.widget.Toast;
 
 
     public class diet_main extends AppCompatActivity {
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -20,7 +22,6 @@
             add.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     Intent can=new Intent(diet_main.this,Add_Food.class);
                     startActivity(can);
                 }
